@@ -1,0 +1,33 @@
+using System;
+
+namespace _10._4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите трехзначное число ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            if (((a > 99) && (a <= 999)) || ((a < -99) && (a >= -999)))
+            {
+
+                int b1, b2=0, b0=0;
+                b2 = a / 100;
+                b1 = (a - b2 * 100) / 10;
+                b0 = a % 10;
+                if( ((b2 < b1) && (b1 < b0)) || ((b2 > b1) && (b1 > b0)))
+                {
+                    Console.WriteLine("Цифры образуют возрастающую или убывающую последовательность");
+                }
+                else
+                {
+                    Console.WriteLine("Нет последовательности");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Ошибка ввода");
+            }
+        }
+    }
+}
